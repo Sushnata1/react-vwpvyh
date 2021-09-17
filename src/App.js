@@ -7,6 +7,7 @@ import About from './About.js';
 import Contact from './Contact.js';
 import Counter from './Counter.js';
 import EventBind from './EventBind.js';
+import ParentComponent from './ParentComponent.js'
 
 import './style.css';
 
@@ -18,15 +19,16 @@ function App() {
       <nav>
         <ul>
           <li>
-            <Link to={'/about'}> About </Link>
+            <Link to='/about'> About </Link>
           </li>
           <li>
-            <Link to={'/contact'}>Contact</Link>
+            <Link to='/contact'>Contact</Link>
           </li>
           <li>
-            <Link to={'/counter'}>Counter</Link>
+            <Link to='/counter'>Counter</Link>
           </li>
-          <li><Link to={'/eventbind'}>EventBind</Link></li>
+          <li><Link to='/eventbind'>EventBind</Link></li>
+          <li><Link to='/parentcomponent'>Parent</Link></li>
         </ul>
       </nav>
       <Switch>
@@ -34,13 +36,14 @@ function App() {
           exact
           path="/"
           component={(props) => {
-            return <h1>Tello</h1>;
+            return <h1>Hello</h1>;
           }}
         />
         <Route path="/about" component={About} />
         <Route path="/contact" component={Contact} />
         <Route path="/counter" component={Counter} />
         <Route path="/eventbind" component={EventBind} />
+        <Route path='/parentcomponent' component={ParentComponent}/>
       </Switch>
     </Router>
   );
